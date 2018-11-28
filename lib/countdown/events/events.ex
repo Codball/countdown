@@ -34,7 +34,7 @@ defmodule Countdown.Events do
 
   def list_future_events do
     query = from e in Countdown.Events.Event,
-      where e.due >= DateTime.utc_now
+      where: e.due >= ^DateTime.utc_now
 
     Repo.all(query)
   end
